@@ -1,0 +1,64 @@
+<html>
+<head>
+	<title>Addition</title>
+	<style>
+		*{font-size:30;}
+		body {background-color:#b59ef0;}
+		#submit{
+		  padding: 10px 20px;
+		  color: #CBBDDB;
+		  font-size: 16px;
+		  text-decoration: none;
+		  text-transform: uppercase;
+		  overflow: hidden;
+		  transition: .5s;
+		  letter-spacing: 4px;
+		  border: 1px solid #8F7CEC;
+		  margin: auto;
+		  font-weight:bold;
+		}
+		#submit:hover {
+		  background: #8F7CEC;
+		  color: #fff;
+		  border-radius: 5px;
+		  box-shadow: 0 0 5px #8F7CEC, 0 0 25px #8F7CEC, 0 0 50px #8F7CEC, 0 0 100px #8F7CEC;
+		}
+	</style>
+	<script>
+	let find = () =>
+	{
+		event.preventDefault();
+		let num1 = document.getElementById("num1");
+		let num2 = document.getElementById("num2");
+		let msg = document.getElementById("msg");
+		if (num1.value==""){
+		alert("Enter 1st number");
+		num1.focus();
+		msg.innerHTML="";
+		return;
+		}
+		if (num2.value==""){
+		alert("Enter 2nd number");
+		num2.focus();
+		msg.innerHTML="";
+		return;
+		}
+		let res=parseFloat(num1.value) + parseFloat(num2.value);
+		let ans = "Sum of " + num1.value + " and " + num2.value + " is " + res.toFixed(3);
+		msg.innerHTML=ans;
+
+	}
+	</script>
+</head>
+<body>
+<center>
+	<h1 style="font-family:Papyrus; font-size:35">Addition Website</h1><br/>
+	<form onsubmit="find()">
+	<input type = "number" step="any" placeholder="Enter first number" id="num1" />
+	<input type = "number" step="any" placeholder="Enter second number" id="num2" /><br/><br/>
+	<input type = "submit" value = " Add " id = "submit" />
+	</form><br/>
+	<h1 id="msg"></h1>
+</center>
+</body>
+</html>
